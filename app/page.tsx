@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, MessageSquare, Share2, Zap, Shield, Workflow } from "lucide-react"
+import { CheckCircle, MessageSquare, Share2, Zap, Shield, Workflow, Key } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -46,7 +46,7 @@ export default function HomePage() {
             AI-Powered Industrial Intelligence
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Ask anything about your plant –{" "}
+            Ask anything about your plant –<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
               get answers instantly
             </span>
@@ -196,17 +196,17 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start space-x-3">
+            <div className="flex items-center space-x-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <span className="text-slate-300">Built for real-time telemetry</span>
             </div>
-            <div className="flex items-start space-x-3">
+            <div className="flex items-center space-x-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <span className="text-slate-300">
                 Translates questions into KQL — Microsoft's query language for exploring and analyzing telemetry data
               </span>
             </div>
-            <div className="flex items-start space-x-3">
+            <div className="flex items-center space-x-3">
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
               <span className="text-slate-300">Explains every query and its results</span>
             </div>
@@ -219,43 +219,123 @@ export default function HomePage() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Works with Your Existing Stack</h2>
-            <p className="text-lg text-slate-300">Just connect and query.</p>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Connect seamlessly to your current industrial systems. No rip-and-replace required.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Protocols</h3>
-              <ul className="space-y-2 text-slate-300">
-                <li>OPC UA</li>
-                <li>MQTT</li>
-                <li>REST</li>
-                <li>SQL</li>
-              </ul>
-            </div>
+            <Card className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:border-slate-600">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3">
+                    <Zap className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">Protocols</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    OPC UA
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    MQTT
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    REST
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    SQL
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Middleware</h3>
-              <ul className="space-y-2 text-slate-300">
-                <li>HighByte</li>
-                <li>HiveMQ</li>
-                <li>Ignition</li>
-              </ul>
-            </div>
+            <Card className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:border-slate-600">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                    <Workflow className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">Middleware</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    HighByte
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    HiveMQ
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    Ignition
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Systems</h3>
-              <ul className="space-y-2 text-slate-300">
-                <li>DCS, MES, SCADA, LIMS</li>
-                <li>(such as DeltaV and Syncade)</li>
-              </ul>
-            </div>
+            <Card className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:border-slate-600">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+                    <Shield className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">Systems</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    DCS
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    MES
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    SCADA
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    LIMS
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    DeltaV
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    Syncade
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Apps</h3>
-              <ul className="space-y-2 text-slate-300">
-                <li>Mobius suite</li>
-                <li>(ProofCheck™, AlertTrack+, QuickView+)</li>
-              </ul>
+            <Card className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:border-slate-600">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+                    <MessageSquare className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">Apps</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    Mobius Suite
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    ProofCheck™
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    AlertTrack+
+                  </Badge>
+                  <Badge variant="secondary" className="bg-slate-700 text-slate-200 hover:bg-slate-600">
+                    QuickView+
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center space-x-4 px-6 py-3 bg-slate-800/50 rounded-full border border-slate-700">
+              <span className="text-slate-300">All systems</span>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+              <span className="text-blue-400 font-medium">Open Industrial</span>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+              <span className="text-slate-300">Instant insights</span>
             </div>
           </div>
         </div>
@@ -274,7 +354,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex items-center space-x-3">
-              <Shield className="w-5 h-5 text-blue-400" />
+              <Key className="w-5 h-5 text-blue-400" />
               <span className="text-slate-300">Your data, your access policies</span>
             </div>
             <div className="flex items-center space-x-3">
