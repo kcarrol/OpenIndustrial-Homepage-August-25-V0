@@ -420,7 +420,7 @@ export default function HomePage() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Industrial Data?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Connect your systems, ask questions in plain English, and get instant insights from your plant data.
+            Connect, query and act on instant insights from your plant data.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3">
